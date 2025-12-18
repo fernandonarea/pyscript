@@ -1,0 +1,135 @@
+2025-12-18 17:45:16,180 - INFO - Archivo Excel le�do correctamente.
+2025-12-18 17:45:18,008 - ERROR - Error de Autenticaci�n: Outlook rechaz� tu contrase�a.
+2025-12-18 17:45:18,008 - ERROR - Soluci�n: Probablemente necesites una 'Contrase�a de Aplicaci�n'.
+2025-12-18 17:47:24,351 - INFO - Archivo Excel le�do correctamente.
+2025-12-18 17:47:25,498 - INFO - Conexi�n exitosa al servidor SMTP.
+2025-12-18 17:47:26,621 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 17:47:33,247 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 17:47:38,340 - INFO - Proceso terminado con exito.
+2025-12-18 17:51:43,072 - INFO - Archivo Excel leido correctamente.
+2025-12-18 17:51:43,073 - INFO - Iniciando conexi�n al servidor SMTP...
+2025-12-18 17:51:44,308 - INFO - Conexi�n exitosa al servidor SMTP.
+2025-12-18 17:51:45,317 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 17:51:52,153 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 17:51:57,248 - INFO - Proceso terminado con exito.2025-12-18 17:55:31,890 - INFO - Archivo Excel leido correctamente.
+2025-12-18 17:55:31,890 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 17:55:32,922 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 17:55:34,048 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 17:55:40,642 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 17:55:45,751 - INFO - Proceso terminado con exito.
+2025-12-18 17:56:07,243 - INFO - === Proceso Iniciado ===
+2025-12-18 17:56:07,711 - INFO - Archivo Excel leido correctamente.
+2025-12-18 17:56:07,711 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 17:56:08,638 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 17:56:09,577 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 17:56:15,541 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 17:56:20,636 - INFO - Proceso terminado con exito.
+2025-12-18 18:03:35,647 - INFO - === Proceso Iniciado ===
+2025-12-18 18:03:36,114 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:03:36,115 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:03:37,048 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:03:38,814 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:03:43,815 - ERROR - 
+Error general: Error de prueba en la segunda fila.
+2025-12-18 18:10:28,676 - INFO - === Proceso Iniciado ===
+2025-12-18 18:10:29,147 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:10:29,147 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:10:30,101 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:10:31,180 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:10:37,938 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 18:10:44,697 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:10:49,796 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:12:27,572 - INFO - === Proceso Iniciado ===
+2025-12-18 18:12:28,058 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:12:28,058 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:12:29,135 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:12:29,144 - ERROR - 
+Error general: 'Email'
+2025-12-18 18:15:26,081 - INFO - === Proceso Iniciado ===
+2025-12-18 18:15:26,665 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:15:26,665 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:15:27,735 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:15:27,740 - ERROR - Error al enviar correo a fernandonarea27@hotmail.com: Primer fila de datos, simulando error de envio.
+2025-12-18 18:15:28,858 - INFO - Correo enviado a atenasfrar@hotmail.com exitosamente.
+2025-12-18 18:15:34,776 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:15:39,871 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:16:02,167 - INFO - === Proceso Iniciado ===
+2025-12-18 18:16:02,679 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:16:02,679 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:16:03,776 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:16:04,744 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:16:31,417 - INFO - === Proceso Iniciado ===
+2025-12-18 18:16:31,897 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:16:31,897 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:16:32,860 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:16:34,523 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:16:39,524 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:16:41,100 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:16:46,194 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:19:01 - INFO - === Proceso Iniciado ===
+2025-12-18 18:19:01 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:19:01 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:19:02 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:19:04 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:19:09 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:19:10 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:19:15 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:21:22 - INFO - === Proceso Iniciado ===
+2025-12-18 18:21:22 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:21:22 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:21:23 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:21:23 - INFO - Leyendo filas del Excel.
+2025-12-18 18:21:23 - INFO - Enviando correo a fernandonarea27@hotmail.com...
+2025-12-18 18:21:24 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:21:29 - INFO - Leyendo filas del Excel.
+2025-12-18 18:21:29 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:21:29 - INFO - Leyendo filas del Excel.
+2025-12-18 18:21:29 - INFO - Enviando correo a fernandonarea6@gmail.com...
+2025-12-18 18:21:31 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:21:36 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:22:18 - INFO - === Proceso Iniciado ===
+2025-12-18 18:22:18 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:22:18 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:22:19 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:22:19 - INFO - Leyendo filas del Excel.
+2025-12-18 18:22:20 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:22:25 - INFO - Leyendo filas del Excel.
+2025-12-18 18:22:25 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:22:25 - INFO - Leyendo filas del Excel.
+2025-12-18 18:22:27 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:22:32 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:24:18 - INFO - === Proceso Iniciado ===
+2025-12-18 18:24:18 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:24:18 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:24:19 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:24:19 - INFO - Leyendo filas del Excel.
+2025-12-18 18:24:20 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:24:25 - INFO - Leyendo filas del Excel.
+2025-12-18 18:24:25 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:24:25 - INFO - Leyendo filas del Excel.
+2025-12-18 18:24:27 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:24:32 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:34:48 - INFO - === Proceso Iniciado ===
+2025-12-18 18:34:49 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:34:49 - INFO - Iniciando conexion al servidor SMTP...
+2025-12-18 18:34:50 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:34:50 - INFO - Leyendo filas del Excel.
+2025-12-18 18:34:52 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:34:57 - INFO - Leyendo filas del Excel.
+2025-12-18 18:34:57 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:34:57 - INFO - Leyendo filas del Excel.
+2025-12-18 18:34:58 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:35:03 - INFO - === Proceso terminado con exito. ===
+2025-12-18 18:36:50 - INFO - === Proceso Iniciado ===
+2025-12-18 18:36:50 - INFO - Archivo Excel leido correctamente.
+2025-12-18 18:36:50 - INFO - Iniciando conexion al servidor SMTP
+2025-12-18 18:36:51 - INFO - Conexion exitosa al servidor SMTP.
+2025-12-18 18:36:51 - INFO - Leyendo filas del Excel.
+2025-12-18 18:36:51 - INFO - Enviando correo a fernandonarea27@hotmail.com
+2025-12-18 18:36:53 - INFO - Correo enviado a fernandonarea27@hotmail.com exitosamente.
+2025-12-18 18:36:58 - INFO - Leyendo filas del Excel.
+2025-12-18 18:36:58 - ERROR - Error al enviar correo a atenasfrar@hotmail.com: Segunda fila de datos, simulando error de envio.
+2025-12-18 18:36:58 - INFO - Leyendo filas del Excel.
+2025-12-18 18:36:58 - INFO - Enviando correo a fernandonarea6@gmail.com
+2025-12-18 18:36:59 - INFO - Correo enviado a fernandonarea6@gmail.com exitosamente.
+2025-12-18 18:37:04 - INFO - === Proceso terminado con exito. ===
