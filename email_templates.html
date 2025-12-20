@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p>Hola <strong>{{usuario}}</strong>,</p>
+    <p>Tu numero de incidencias fue <strong>{{incidencias}}</strong></p>
+    <p>La base <strong>{{nombre_archivo}} fue actualizada</strong></p>
+    <p>Saludos cordiales</p>
+
+    {% if campana == 'campaña a' %}
+        <p>Mensaje 1</p>
+    {% else %}
+        <p>Mensaje 2</p>
+    {% endif %}
+
+  </body>
+</html>
