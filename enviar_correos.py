@@ -1,121 +1,100 @@
 import pandas as pd
 import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import time
 import os
-from dotenv import load_dotenv
-load_dotenv()
 import logging
+import glob
+from dotenv import load_dotenv
 from logs import logging_config
+from jinja2 import Environment, FileSystemLoader
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+# Cargando variables de entorno y configuración de los LOGS
+load_dotenv()
 logging_config()
 
+file_loader = FileSystemLoader(".")
+env = Environment(loader=file_loader)
 
-# Configuración del servidor SMTP
-SMTP_SERVER = os.getenv('SERVER_TYPE')
-SMTP_PORT = os.getenv('SERVER_PORT')
-REMITENTE = os.getenv('EMAIL_ADDRESS')
-PASS = os.getenv('APP_PASSWORD')
+SERVER_TYPE = os.getenv("SERVER_TYPE")
+SERVER_PORT = os.getenv("SERVER_PORT")
+REMITENTE = os.getenv("EMAIL_ADDRESS")
+PASS = os.getenv("APP_PASSWORD")
+ORIGEN_DATOS = os.getenv("CARPETA_ORIGEN")
+EMAIL_CC = ["fernando@gmail.com", "Correo@.com", ""]
 
-
+# Obtención y lectura de archivo .xlsx más reciente
 try:
-    logging.info('=== Proceso Iniciado ===')
-    df = pd.read_excel('reportes.xlsx')
-    print('Archivo Excel leido correctamente.')
-    logging.info("Archivo Excel leido correctamente.")
+    logging.info("== Proceso inciado ==")
+    archivos = glob.glob(os.path.join(ORIGEN_DATOS, "*.xlsx"))
+    archivo_reciente = max(archivos, key=os.path.getctime)
+    logging.info(f"Archivo {archivo_reciente} obtenido")
+
+    df = pd.read_excel(archivo_reciente)
+    logging.info(f"Archivo {archivo_reciente} leido exitosamente")
 except Exception as e:
-    print("Error al leer el archivo Excel. Revisa logs.log para más detalles.")
-    logging.error(f"Error al leer el archivo Excel: {e}")
-    exit()
+    logging.error("Error en la obtencion y lectura del archivo: {e}")
+    exit(1)
 
-# Conexión y envío de correos
+# Obtención de datos y envío de mensaje
 try:
-    logging.info("Iniciando conexion al servidor SMTP")
-    servidor = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+    # Conexion al servidor de envio de correos
+    servidor = smtplib.SMTP(SERVER_TYPE, SERVER_PORT)
     servidor.starttls()
     servidor.login(REMITENTE, PASS)
-    logging.info("Conexion exitosa al servidor SMTP.")
-    print('Conexion exitosa al servidor SMTP.')
+    logging.info("Conexion exitosa con el servidor")
 
+    # Lectura de datos del .xlsx
     for index, row in df.iterrows():
         try:
-            usuario = row['Usuario']
-            campana = row['Campaña']
-            incidencias = row['Incidencias']
-            nombre_archivo = row['Nombre Archivo']
-            destinatario = row.get('Usuario', '')
-            logging.info(f"Leyendo filas del Excel.")
-           
+            usuario = row["Usuario"]
+            incidencias = row["Incidencias"]
+            campana = row["Campaña"]
+            nombre_archivo = row["Nombre Archivo"]
+            destinatario = row.get("Usuario", "")
+
             if not destinatario:
-                logging.warning(f"Fila {index + 2}: No se encontro correo electronico. Saltando...")
-                print(f"Fila {index + 2}: No se encontro correo electronico. Saltando...")
-                continue
+                logging.error(
+                    f"Fila {index + 2}: No se encontró el dato de destinatario"
+                )
+
+            logging.info("Construyendo correo")
             
-            if index == 1:
-                raise Exception("Segunda fila de datos, simulando error de envio.")
-            
-            # Creando mensaje
+            # Creación del mensaje
             msg = MIMEMultipart()
-            msg['From'] = REMITENTE
-            msg['To'] = destinatario
-            msg['Subject'] = f"{nombre_archivo}"
+            msg["From"] = usuario
+            msg["To"] = destinatario
+            msg["Subject"] = nombre_archivo
+            msg["Cc"] = EMAIL_CC
 
-            cuerpo1 = f"""
-            <html>
-            <body>
-                <h1>Primer mensaje</h1>
-                <p>Hola {usuario},</p>
-                <p>Te informamos que en la campaña <b>{campana}</b> se han registrado <b>{incidencias}</b> incidencias.</p>
-                <p>Por favor, revisa el archivo adjunto para más detalles.</p>
-                <br>
-                <p>Saludos cordiales,</p>
-                <p>Equipo de Soporte</p>
-            </body>
-            </html>
-            """
+            # Obteniendo el template HTML
+            template = env.get_template("email_templates.html")
 
-            cuerpo2 = f"""
-            <html>
-            <body>
-                <h1>Segundo mensaje</h1>
-                <p>Hola {usuario},</p>
-                <p>Te informamos que en la campaña <b>{campana}</b> se han registrado <b>{incidencias}</b> incidencias.</p>
-                <p>Por favor, revisa el archivo adjunto para más detalles.</p>
-                <br>
-                <p>Saludos cordiales,</p>
-                <p>Equipo de Soporte</p>
-            </body>
-            </html>
-            """
+            # Llenado del template HTML
+            mensaje_html = template.render(
+                usuario=usuario, incidencias=incidencias, nombre_archiv=nombre_archivo
+            )
 
-            if campana.lower() == 'campaña a':
-                msg.attach(MIMEText(cuerpo1, 'html'))
-            elif campana.lower() == 'campaña b':
-                msg.attach(MIMEText(cuerpo2, 'html'))
+            msg.attach(MIMEText(mensaje_html, "html"))
 
-            logging.info(f"Enviando correo a {destinatario}")
-
+            logging.info(f"Enviando Correo a {destinatario}")
             servidor.send_message(msg)
+            logging.info(f"Correo enviado a {destinatario} con exito")
 
-            logging.info(f"Correo enviado a {destinatario} exitosamente.")
-            print(f"Correo enviado a {destinatario} exitosamente.")
         except Exception as e:
-            logging.error(f"Error al enviar correo a {row['Usuario']}: {e}")
-            print(f"Error al enviar correo a {row['Usuario']}. Revisar logs para más detalles.")
+            logging.error(
+                f"Error al enviar correo a {row['Usuario']}: ",
+                e,"Saltando al siguiente usuario",
+            )
             continue
 
-        time.sleep(5)
-
+        time.sleep(3)
     servidor.quit()
-    logging.info("=== Proceso terminado con exito. ===")
-    print('=== Proceso Terminado ===')
+    logging.info("== Proceso Terminado con exito")
 
 except smtplib.SMTPAuthenticationError:
-    logging.error("Error de Autenticacion: Gmail rechazo tu clave.")
-    print("Error de Autenticacion: Gmail rechazo tu clave. Revisa logs.log para más detalles.")
-    logging.error("Solucion: Probablemente necesites una 'Clave de Aplicacion'.")
-    print("Solucion: Probablemente necesites una 'Clave de Aplicacion'. Revisa logs.log para más detalles.")
+    logging.error("Gmail rechazó tu clave de aplicacion")
+    logging.warning("Probablemente se necesite una clave de aplicacion")
 except Exception as e:
-    logging.error(f"\nError general: {e}")
-    print(f"\nError general. Revisa logs.log para mas detalles.")
+    logging.error("Error general del script: {e}")
