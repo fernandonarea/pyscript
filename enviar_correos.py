@@ -60,7 +60,7 @@ try:
                 )
 
             logging.info("Construyendo correo")
-            
+
             # Creación del mensaje
             msg = MIMEMultipart()
             msg["From"] = usuario
@@ -85,11 +85,12 @@ try:
         except Exception as e:
             logging.error(
                 f"Error al enviar correo a {row['Usuario']}: ",
-                e,"Saltando al siguiente usuario",
+                e,
+                "Saltando al siguiente usuario",
             )
             continue
-
         time.sleep(3)
+
     servidor.quit()
     logging.info("== Proceso Terminado con exito")
 
